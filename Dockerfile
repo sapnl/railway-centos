@@ -1,4 +1,5 @@
 FROM centos:centos7
+RUN apt update -y
 ENV LANG en_US.utf8
 ARG Ngrok
 ARG Password
