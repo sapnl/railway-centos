@@ -9,8 +9,7 @@ RUN wget -O ngrok.zip https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux
 RUN unzip ngrok.zip
 RUN mkdir /run/sshd
 RUN echo root:root|chpasswd
+RUN chmod 755
+EXPOSE 80 8888 8080 443 5130 5131 5132 5133 5134 5135 3306
 RUN ./ngrok config add-authtoken 2K1EwkoYEzrBYY4Z3r07O2Rv4zC_qwB4o622Ew2hqLvFqCBz
 RUN ./ngrok tcp 22 --region us
-RUN chmod 755 /1.sh
-EXPOSE 80 8888 8080 443 5130 5131 5132 5133 5134 5135 3306
-CMD  /1.sh
