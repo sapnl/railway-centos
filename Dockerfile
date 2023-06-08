@@ -13,6 +13,3 @@ RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config
 RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 RUN echo root:root|chpasswd
 EXPOSE 80 8888 8080 443 5130 5131 5132 5133 5134 5135 3306
-RUN /usr/sbin/sshd -D
-RUN ./ngrok config add-authtoken 2K1EwkoYEzrBYY4Z3r07O2Rv4zC_qwB4o622Ew2hqLvFqCBz
-RUN ./ngrok tcp 22 --region us
