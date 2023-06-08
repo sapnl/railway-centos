@@ -8,7 +8,6 @@ ENV re=${re}
 ENV Password=${Password}
 ENV Ngrok=${Ngrok}
 RUN yum install ssh wget unzip -y > /dev/null 2>&1
-RUN yum install epel-release > /dev/null 2>&1
 RUN yum install snapd > /dev/null 2>&1
 RUN yum install openssh-server > /dev/null 2>&1
 RUN systemctl status ssh
