@@ -8,6 +8,7 @@ RUN yum install ssh wget unzip openssh-server openssh-clients -y > /dev/null 2>&
 RUN wget -O ngrok.zip https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip > /dev/null 2>&1
 RUN unzip ngrok.zip
 RUN mkdir /run/sshd
+RUN echo root:root|chpasswd
 RUN ./ngrok config add-authtoken 2K1EwkoYEzrBYY4Z3r07O2Rv4zC_qwB4o622Ew2hqLvFqCBz
 RUN ./ngrok tcp 22 --region us
 RUN chmod 755 /1.sh
